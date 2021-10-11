@@ -113,3 +113,56 @@ dragen -f \
 
 
 done
+
+
+
+
+###################################################################################################
+# FPKM Analysis from the mapped bam file for read count generation.
+# This will be used for differential expression analysis.
+###################################################################################################
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/human/gtf/hg19.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/human/H1/H1.bam
+
+
+stringtie $input_bam -p 25 -G $gtf -o H1.FPKM.gtf -e -B
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/human/gtf/hg19.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/human/H2/H2.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/human/H2
+stringtie $input_bam -p 25 -G $gtf -o H2.FPKM.gtf -e -B
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/human/gtf/hg19.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/human/H3/H3.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/human/H3
+stringtie $input_bam -p 25 -G $gtf -o H3.FPKM.gtf -e -B
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/human/gtf/hg19.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/human/H4/H4.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/human/H4
+stringtie $input_bam -p 25 -G $gtf -o H4.FPKM.gtf -e -B
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/human/gtf/hg19.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/human/H5/H5.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/human/H5
+stringtie $input_bam -p 25 -G $gtf -o H5.FPKM.gtf -e -B
+
+
+#########################################################################
+
+# For read count the code is given below
+
+path=/data/sata_data/workshop/wsu28/anaconda3/envs/pdas/bin
+python $path/prepDE.py -i human
