@@ -126,3 +126,106 @@ echo "##########################################################################
 echo "Sample:" $L "compleated"
 echo "##########################################################################"
 done
+
+
+
+###################################################################################################
+# FPKM Analysis from the mapped bam file for read count generation.
+# This will be used for differential expression analysis.
+###################################################################################################
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/1/1.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/1
+stringtie $input_bam -p 25 -G $gtf -o 1.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 1	compleated."
+echo "##############################################################################"
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/2/2.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/2
+stringtie $input_bam -p 25 -G $gtf -o 2.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 2	compleated."
+echo "##############################################################################"
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/3/3.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/3
+stringtie $input_bam -p 25 -G $gtf -o 3.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 3	compleated."
+echo "##############################################################################"
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/4/4.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/4
+stringtie $input_bam -p 25 -G $gtf -o 4.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 4	compleated."
+echo "##############################################################################"
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/5/5.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/5
+stringtie $input_bam -p 25 -G $gtf -o 5.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 5	compleated."
+echo "##############################################################################"
+
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/6/6.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/6
+stringtie $input_bam -p 25 -G $gtf -o 6.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 6	compleated."
+echo "##############################################################################"
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/7/7.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/7
+stringtie $input_bam -p 25 -G $gtf -o 7.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 7	compleated."
+echo "##############################################################################"
+
+
+gtf=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/gtf/mouse/gtf/mm10.refGene.gtf
+input_bam=/data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/processed/mouse/8/8.bam
+
+cd /data/sata_data/workshop/wsu28/NGC/RNA_IICB_A.Sengupta/FPKM/mouse/8
+stringtie $input_bam -p 25 -G $gtf -o 8.FPKM.gtf -e -B
+
+echo "##############################################################################"
+echo " Sample 8	compleated."
+echo "##############################################################################"
+
+#For read count the code is given below.
+
+path=/data/sata_data/workshop/wsu28/anaconda3/envs/pdas/bin
+python $path/prepDE.py -i mouse
